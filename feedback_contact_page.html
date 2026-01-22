@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Contact</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
+            color: #f0e6d2;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(26, 47, 79, 0.6);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .header h1 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header p {
+            color: #e8d5b5;
+            font-size: 1.1rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            background: rgba(26, 47, 79, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .section h2 {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #d4af37;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #d4af37;
+            background: rgba(13, 27, 42, 0.6);
+            color: #f0e6d2;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .rating-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #d4af37;
+            transform: scale(1.2);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+            color: #d4af37;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #d4af37;
+            color: #0d1b2a;
+            transform: scale(1.02);
+        }
+
+        .contact-info {
+            background: rgba(13, 27, 42, 0.5);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #d4af37;
+        }
+
+        .contact-info h3 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info p {
+            color: #e8d5b5;
+            line-height: 1.8;
+        }
+
+        .success-message {
+            background: rgba(34, 139, 34, 0.2);
+            border: 2px solid #22aa22;
+            color: #90EE90;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+            margin-top: 1rem;
+        }
+        footer{
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="main_page.html">Home</a></li>
+            <li><a href="start_page.html">Explore</a></li>
+            <li><a href="india_page.html">India</a></li>
+            <li><a href="maldives_page.html">Maldives</a></li>
+            <li><a href="nepal_page.html">Nepal</a></li>
+            <li><a href="assessment_page.html">Assessment</a></li>
+            <li><a href="feedback_contact_page.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Feedback & Contact Us</h1>
+            <p>We'd love to hear from you!</p>
+        </div>
+
+        <div class="content-grid">
+            <!-- Feedback Section -->
+            <div class="section">
+                <h2>Course Feedback</h2>
+                <div class="form-group">
+                    <label>Rate Your Experience</label>
+                    <div class="rating-container">
+                        <span class="star" onclick="setRating(1)">★</span>
+                        <span class="star" onclick="setRating(2)">★</span>
+                        <span class="star" onclick="setRating(3)">★</span>
+                        <span class="star" onclick="setRating(4)">★</span>
+                        <span class="star" onclick="setRating(5)">★</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="feedback-name">Name *</label>
+                    <input type="text" id="feedback-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="feedback-email">Email *</label>
+                    <input type="email" id="feedback-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="feedback-phone">Phone Number</label>
+                    <input type="tel" id="feedback-phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="feedback-comments">Your Feedback *</label>
+                    <textarea id="feedback-comments" placeholder="Share your thoughts about the course..." required></textarea>
+                </div>
+                <button class="btn" onclick="submitFeedback()">Submit Feedback</button>
+                <div id="feedback-success" class="success-message">
+                    Thank you for your feedback! We appreciate your input.
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="section">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><strong>Email:</strong> devops@southasianlearning.com</p>
+                    <p><strong>Phone:</strong> 12345 67890</p>
+                    <p><strong>Address:</strong> MG Road, Karnataka, India</p>
+                </div>
+                <div class="form-group">
+                    <label for="contact-name">Name *</label>
+                    <input type="text" id="contact-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email *</label>
+                    <input type="email" id="contact-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-phone">Phone Number</label>
+                    <input type="tel" id="contact-phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message *</label>
+                    <textarea id="contact-message" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button class="btn" onclick="submitContact()">Send Message</button>
+                <div id="contact-success" class="success-message">
+                    Message sent successfully! We'll get back to you soon.
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="margin-top: 2rem;">
+            <h2>Other Features You'd Like to See</h2>
+            <p style="color: #e8d5b5; margin-bottom: 1rem;">We're constantly improving! Share your suggestions for new features or content you'd like to see in future updates.</p>
+            <div class="form-group">
+                <textarea placeholder="Suggest new features, countries to cover, or improvements..." style="min-height: 100px;"></textarea>
+            </div>
+            <button class="btn">Submit Suggestions</button>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
+</footer>
+</html>

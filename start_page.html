@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Asian Countries</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
+            color: #f0e6d2;
+            min-height: 100vh;
+        }
+        .navbar{
+            background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #d4af37;
+        }
+        .navbar ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .navbar a{
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        .navbar a:hover{
+            background: rgba(212, 175, 55, 0.2);
+        }
+        .hero{
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .hero h1{
+            font-size: 3.5rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero p{
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #e8d5b5;
+        }
+        .countries-preview{
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        .country-card{
+            background: rgba(26, 47, 79, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            width: 250px;
+            border: 2px solid #d4af37;
+            transition: all 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .country-card:hover{
+            box-shadow: 0 12px 24px rgba(212, 175, 55, 0.3);
+        }
+        .country-card h3{
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .country-card p{
+            color: #e8d5b5;
+            line-height: 1.6;
+        }
+        .cta-buttons{
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .btn{
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+            color: #d4af37;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background: #d4af37;
+            color: #0d1b2a;
+            transform: scale(1.05);
+        }
+        .map-container {
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(26, 47, 79, 0.8);
+            border: 3px solid #d4af37;
+            border-radius: 15px;
+        }
+        footer{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="main_page.html">Home</a></li>
+            <li><a href="start_page.html">Explore</a></li>
+            <li><a href="india_page.html">India</a></li>
+            <li><a href="nepal_page.html">Nepal</a></li>
+            <li><a href="maldives_page.html">Maldives</a></li>
+            <li><a href="assessment_page.html">Assessment</a></li>
+            <li><a href="feedback_contact_page.html">Feedback</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <h1>Explore South Asian Countries</h1>
+        <div class="map-container">
+            <h2>Interactive World Map</h2>
+            <p>Click on the gold-shaded regions of South Asia to begin your journey.</p>
+            <img src="D:\VIT\Sem 4\Web programming\Mini Project\South_Asian_Countries\images\south_asian_map.jpeg" usemap="#southasianmap" alt="Gold World Map" width="750" height="567">        
+            <map name="southasianmap">
+                <area shape="poly" coords="483,283,494,266,512,278,523,289,502,322" href="india_page.html" alt="India">
+                <area shape="rect" coords="513,248,527,265" href="nepal_page.html" alt="Nepal">
+                <area shape="circle" coords="487,333,8" href="maldives_page.html" alt="Maldives">
+            </map>
+        </div>
+        <div class="countries-preview">
+            <div class="country-card">
+                <h3>🇮🇳 India</h3>
+                <p>Land of diverse cultures, ancient traditions, and vibrant festivals.</p>
+            </div>
+            <div class="country-card">
+                <h3>🇳🇵 Nepal</h3>
+                <p>Home to the Himalayas, spirituality, and warm hospitality.</p>
+            </div>
+            <div class="country-card">
+                <h3>🇲🇻 Maldives</h3>
+                <p>Tropical paradise with stunning beaches and rich marine life.</p>
+            </div>
+        </div>
+        <div class="cta-buttons">
+            <a href="india_page.html" class="btn">India</a>
+            <a href="nepal_page.html" class="btn">Nepal</a>
+            <a href="maldives_page.html" class="btn">Maldives</a>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
+</footer>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
+            color: #f0e6d2;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(26, 47, 79, 0.6);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .header h1 {
+            color: #d4af37;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header p {
+            color: #e8d5b5;
+            font-size: 1.2rem;
+        }
+
+        .hero-media {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #d4af37;
+            margin: 2rem 0 1rem;
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .country-intro {
+            color: #e8d5b5;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .accordion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        details.accordion-card {
+            background: rgba(13, 27, 42, 0.7);
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+            padding: 1rem 1.2rem;
+            cursor: pointer;
+        }
+
+        details.accordion-card summary {
+            list-style: none;
+            cursor: pointer;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        details.accordion-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.accordion-card summary::after {
+            content: "＋";
+            float: right;
+            font-weight: bold;
+        }
+
+        details.accordion-card[open] summary::after {
+            content: "−";
+        }
+
+        .accordion-content {
+            margin-top: 0.8rem;
+            color: #e8d5b5;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .media-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .media-embed {
+            flex: 1;
+            min-width: 250px;
+            height: 220px;
+            background: linear-gradient(135deg, #1a2f4f 0%, #0d1b2a 100%);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .media-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+            color: #d4af37;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin: 0.4rem;
+        }
+
+        .btn:hover {
+            background: #d4af37;
+            color: #0d1b2a;
+            transform: scale(1.05);
+        }
+        footer{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <ul>
+        <li><a href="main_page.html">Home</a></li>
+        <li><a href="start_page.html">Explore</a></li>
+        <li><a href="india_page.html">India</a></li>
+        <li><a href="nepal_page.html">Nepal</a></li>
+        <li><a href="maldives_page.html">Maldives</a></li>
+        <li><a href="assessment_page.html">Assessment</a></li>
+        <li><a href="feedback_contact_page.html">Feedback</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="header">
+        <h1>🇳🇵 Nepal</h1>
+        <p>Himalayan Land of Peaks and Temples</p>
+    </div>
+
+    <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80" alt="Himalayan mountains in Nepal">
+    </div>
+
+    <p class="country-intro">
+        Nepal is a landlocked Himalayan country between India and China, renowned for dramatic mountains, deep valleys, and eight of the world’s ten highest peaks, including Mount Everest.
+        It is a multi‑ethnic, multilingual, multi‑religious state whose remote terrain has helped preserve diverse cultures and traditional ways of life.
+    </p>
+
+    <h2 class="section-title">Explore Nepal</h2>
+
+    <div class="accordion-grid">
+        <details class="accordion-card">
+            <summary>Culture & Traditions</summary>
+            <div class="accordion-content">
+                <p>Nepal’s culture weaves together Hindu, Buddhist, and indigenous traditions, with Kathmandu Valley long serving as a center of temples, palaces, and festivals.</p>
+                <p>More than one hundred ethnic groups and over 120 languages contribute to a rich calendar of rituals and celebrations, from Dashain and Tihar to local Newar and mountain festivals.</p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Cuisine</summary>
+            <div class="accordion-content">
+                <p>Typical Nepali meals are built around dal, bhat, and tarkari—lentil soup, rice, and curried vegetables—often served with pickles and sometimes meat, forming a daily “trinity” eaten across the country.</p>
+                <p>Nepali food blends Indian and Tibetan influences, featuring dishes like momos (dumplings), Newari specialties such as yomari and bara, and regional items like gundruk and sel roti.</p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Tourist Spots</summary>
+            <div class="accordion-content">
+                <p>Trekking regions such as Everest and Annapurna attract hikers, while Kathmandu, Patan, and Bhaktapur offer UNESCO‑listed squares with ancient temples, palaces, and intricate wood and metalwork.</p>
+                <p>Religious sites like Swayambhunath (Monkey Temple), Boudhanath Stupa, and Pashupatinath shrine draw both Hindus and Buddhists and highlight shared sacred landscapes.</p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Leaders & Politics</summary>
+            <div class="accordion-content">
+                <p>Nepal transitioned from a monarchy to a federal democratic republic in the early 21st century, ending centuries of royal rule and adopting a new constitution.</p>
+                <p>Recent political history includes a civil conflict and subsequent restructuring of the state into provinces with elected representatives and a ceremonial presidency alongside executive government.</p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Folklore & Crafts</summary>
+            <div class="accordion-content">
+                <p>Traditional folklore features local deities, spirits, and heroes, often linked to mountains, rivers, and village shrines, and is retold in festivals, dance, and oral narratives.</p>
+                <p>Patan and Kathmandu are famous for metal statues, wood carvings, and paubha or thangka paintings, crafts that continue centuries‑old artistic traditions and attract cultural tourists.</p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Quick Facts</summary>
+            <div class="accordion-content">
+                <p>Nepal contains eight of the world’s ten tallest mountains and is internationally known for mountaineering and trekking in its Himalayan regions.</p>
+                <p>The capital is Kathmandu, and tourism, remittances, and agriculture are key economic sectors, with cultural and heritage tourism playing a major role in national identity.</p>
+            </div>
+        </details>
+    </div>
+
+    <h2 class="section-title">Multimedia</h2>
+    <div class="media-container">
+        <div class="media-embed">
+            <iframe src="https://www.youtube.com/embed/o0fG_lW2G0o" title="Nepal mountains and culture" allowfullscreen></iframe>
+        </div>
+        <div class="media-embed">
+            <iframe src="https://www.youtube.com/embed/TfA9GfAfZ2g" title="Kathmandu Valley temples" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <a href="india_page.html" class="btn">← Back: India</a>
+        <a href="maldives_page.html" class="btn">Next: Maldives →</a>
+    </div>
+</div>
+</body>
+<footer>
+    <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
+</footer>
+</html>

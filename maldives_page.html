@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maldives</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
+            color: #f0e6d2;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(26, 47, 79, 0.6);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .header h1 {
+            color: #d4af37;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header p {
+            color: #e8d5b5;
+            font-size: 1.2rem;
+        }
+
+        .hero-media {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #d4af37;
+            margin: 2rem 0 1rem;
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .country-intro {
+            color: #e8d5b5;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .accordion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        details.accordion-card {
+            background: rgba(13, 27, 42, 0.7);
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+            padding: 1rem 1.2rem;
+            cursor: pointer;
+        }
+
+        details.accordion-card summary {
+            list-style: none;
+            cursor: pointer;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        details.accordion-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.accordion-card summary::after {
+            content: "＋";
+            float: right;
+            font-weight: bold;
+        }
+
+        details.accordion-card[open] summary::after {
+            content: "−";
+        }
+
+        .accordion-content {
+            margin-top: 0.8rem;
+            color: #e8d5b5;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .media-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .media-embed {
+            flex: 1;
+            min-width: 250px;
+            height: 220px;
+            background: linear-gradient(135deg, #1a2f4f 0%, #0d1b2a 100%);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .media-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+            color: #d4af37;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin: 0.4rem;
+        }
+
+        .btn:hover {
+            background: #d4af37;
+            color: #0d1b2a;
+            transform: scale(1.05);
+        }
+        footer{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <ul>
+        <li><a href="main_page.html">Home</a></li>
+        <li><a href="start_page.html">Explore</a></li>
+        <li><a href="india_page.html">India</a></li>
+        <li><a href="nepal_page.html">Nepal</a></li>
+        <li><a href="maldives_page.html">Maldives</a></li>
+        <li><a href="assessment_page.html">Assessment</a></li>
+        <li><a href="feedback_contact_page.html">Feedback</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="header">
+        <h1>🇲🇻 Maldives</h1>
+        <p>Island Nation of Atolls and Lagoons</p>
+    </div>
+
+    <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80"
+             alt="Maldives beach and overwater villas">
+    </div>
+
+    <p class="country-intro">
+        The Maldives is a chain of low‑lying coral islands and atolls in the Indian Ocean, southwest of India and Sri Lanka, famous for clear lagoons, coral reefs, and white‑sand beaches.
+        Its geography makes it a major global beach destination but also exposes it to risks from sea‑level rise and coastal erosion.
+    </p>
+
+    <h2 class="section-title">Explore Maldives</h2>
+
+    <div class="accordion-grid">
+        <details class="accordion-card">
+            <summary>Culture & Traditions</summary>
+            <div class="accordion-content">
+                <p>
+                    Maldivian culture reflects South Asian, Arabian, and East African influences shaped by centuries of seafaring and trade along Indian Ocean routes.
+                </p>
+                <p>
+                    Islam is the state religion and central to public life and law, and many customs and holidays follow the Islamic lunar calendar, with mosques prominent in island communities.
+                </p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Cuisine</summary>
+            <div class="accordion-content">
+                <p>
+                    Maldivian cuisine, often called Dhivehi cuisine, centers on fish- especially tuna- coconut, and starchy foods like taro, breadfruit, and rice, often served as curries and stews.
+                </p>
+                <p>
+                    Typical dishes include mas huni (tuna with grated coconut and chili), fish curries such as mas riha, clear fish soup called garudhiya, and snacks like bajiya and gulha eaten with tea.
+                </p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Tourist Spots</summary>
+            <div class="accordion-content">
+                <p>
+                    The Maldives is known for luxury island resorts, overwater villas, and coral reefs that attract divers and snorkelers, particularly in popular atolls such as North Malé and Ari.
+                <p>
+                    Visitors enjoy clear lagoons, marine life including manta rays and whale sharks, and activities like night diving, sandbank picnics, and spa retreats over the ocean.
+                </p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Leaders & Politics</summary>
+            <div class="accordion-content">
+                <p>
+                    The Maldives is a republic with an elected president and a unicameral parliament, and its modern history features transitions between different political leaders and parties.
+                </p>
+                <p>
+                    Tourism and environmental policy are major themes for recent governments because the economy depends heavily on the islands’ natural environment and vulnerability to climate change.
+                </p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Folklore & Beliefs</summary>
+            <div class="accordion-content">
+                <p>
+                    Maldivian folklore includes legends of sea demons and spirits said to haunt islands and reefs, part of a rich oral tradition that predates and coexists with Islamic beliefs.
+                </p>
+                <p>
+                    Older customs such as chewing betel with areca nut and smoking guduguda, a long pipe cooled through water, persist in some communities and are associated with hospitality.
+                </p>
+            </div>
+        </details>
+
+        <details class="accordion-card">
+            <summary>Quick Facts</summary>
+            <div class="accordion-content">
+                <p>
+                    The Maldives is made up of hundreds of coral islands grouped into atolls, with Malé as the capital and many inhabited and resort islands spread over a large ocean area.
+                </p>
+                <p>
+                    Fishing historically rivaled tourism as a main economic activity, and today the country is known for high‑end resort tourism, marine conservation challenges, and efforts toward sustainability.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <h2 class="section-title">Multimedia</h2>
+    <div class="media-container">
+        <div class="media-embed">
+            <!-- Maldives general travel guide -->
+            <iframe src="https://www.youtube.com/embed/IEnY1Lugcqo"
+                    title="Maldives travel guide" allowfullscreen></iframe> <!-- [web:61] -->
+        </div>
+        <div class="media-embed">
+            <!-- Maldives resort / landscape video -->
+            <iframe src="https://www.youtube.com/embed/qwr_BIa1nrM"
+                    title="Maldives resort tour" allowfullscreen></iframe> <!-- [web:58] -->
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <a href="nepal_page.html" class="btn">← Back: Nepal</a>
+        <a href="india_page.html" class="btn">Go to India →</a>
+        <a href="assessment_page.html" class="btn">Go to Assessment</a>
+        <a href="start_page.html" class="btn">Back to Explore</a>
+    </div>
+</div>
+</body>
+<footer>
+    <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
+</footer>
+</html>

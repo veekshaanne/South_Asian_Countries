@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Asian Countries</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
+            color: #f0e6d2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar{
+            background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #d4af37;
+        }
+        .navbar ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .navbar a{
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        .navbar a:hover{
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+        .login-container{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .login-box{
+            background: rgba(26, 47, 79, 0.8);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 450px;
+        }
+        .login-box h2{
+            color: #d4af37;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .form-group{
+            margin-bottom: 1.5rem;
+        }
+        .form-group label{
+            display: block;
+            color: #d4af37;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-group input{
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #d4af37;
+            background: rgba(13, 27, 42, 0.6);
+            color: #f0e6d2;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .btn{
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+            color: #d4af37;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        .btn:hover{
+            background: #d4af37;
+            color: #0d1b2a;
+        }
+        .link-text{
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #e8d5b5;
+        }
+        .link-text a{
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .link-text a:hover{
+            color: #ffd700;
+            text-decoration: underline;
+        }
+        footer{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="main_page.html">Home</a></li>
+            <li><a href="login_page.html">Login</a></li>
+            <li><a href="createacc_page.html">Create Account</a></li>
+            <li><a href="feedback_contact_page.html">Feedback</a></li>
+        </ul>
+    </nav>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button class="btn" onclick="window.location.href='start_page.html'">Login</button>
+            <p class="link-text">Don't have an account? <a href="createacc_page.html">Create Account</a></p>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
+</footer>
+</html>

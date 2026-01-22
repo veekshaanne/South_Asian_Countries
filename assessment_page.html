@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment - South Asian Countries</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
+            color: #f0e6d2;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(26, 47, 79, 0.6);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .header h1 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header p {
+            color: #e8d5b5;
+            font-size: 1.1rem;
+        }
+
+        .question-card {
+            background: rgba(26, 47, 79, 0.7);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .question-card h3 {
+            color: #d4af37;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            background: rgba(13, 27, 42, 0.6);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #e8d5b5;
+            display: flex;
+            align-items: center;
+        }
+
+        .option:hover {
+            border-color: #d4af37;
+            background: rgba(13, 27, 42, 0.8);
+            transform: translateX(5px);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 1rem;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .option.selected {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+            color: #d4af37;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #d4af37;
+            color: #0d1b2a;
+            transform: scale(1.05);
+        }
+
+        .result-box {
+            background: rgba(26, 47, 79, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .result-box h2 {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-box p {
+            color: #e8d5b5;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .score {
+            font-size: 3rem;
+            color: #ffd700;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        footer{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="main_page.html">Home</a></li>
+            <li><a href="start_page.html">Explore</a></li>
+            <li><a href="india_page.html">India</a></li>
+            <li><a href="nepal_page.html">Nepal</a></li>
+            <li><a href="maldives_page.html">Maldives</a></li>
+            <li><a href="assessment_page.html">Assessment</a></li>
+            <li><a href="feedback_contact_page.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Knowledge Assessment</h1>
+            <p>Test your understanding of India, Maldives, and Nepal</p>
+        </div>
+
+        <div class="question-card question-1">
+            <h3>1. Which famous monument is located in Agra, India?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(1, 0)">
+                    <input type="radio" name="q1" value="a"> Red Fort
+                </label>
+                <label class="option" onclick="selectOption(1, 1)">
+                    <input type="radio" name="q1" value="b"> Gateway of India
+                </label>
+                <label class="option" onclick="selectOption(1, 2)">
+                    <input type="radio" name="q1" value="c"> Taj Mahal
+                </label>
+                <label class="option" onclick="selectOption(1, 3)">
+                    <input type="radio" name="q1" value="d"> Qutub Minar
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-2">
+            <h3>2. What is the traditional music and dance form of Maldives called?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(2, 0)">
+                    <input type="radio" name="q2" value="a"> Bharatanatyam
+                </label>
+                <label class="option" onclick="selectOption(2, 1)">
+                    <input type="radio" name="q2" value="b"> Bodu Beru
+                </label>
+                <label class="option" onclick="selectOption(2, 2)">
+                    <input type="radio" name="q2" value="c"> Kathak
+                </label>
+                <label class="option" onclick="selectOption(2, 3)">
+                    <input type="radio" name="q2" value="d"> Tamang Selo
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-3">
+            <h3>3. What is the world's highest mountain peak located in Nepal?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(3, 0)">
+                    <input type="radio" name="q3" value="a"> Mount Everest
+                </label>
+                <label class="option" onclick="selectOption(3, 1)">
+                    <input type="radio" name="q3" value="b"> K2
+                </label>
+                <label class="option" onclick="selectOption(3, 2)">
+                    <input type="radio" name="q3" value="c"> Kanchenjunga
+                </label>
+                <label class="option" onclick="selectOption(3, 3)">
+                    <input type="radio" name="q3" value="d"> Annapurna
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-4">
+            <h3>4. Who is known as the Father of the Indian Nation?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(4, 0)">
+                    <input type="radio" name="q4" value="a"> Jawaharlal Nehru
+                </label>
+                <label class="option" onclick="selectOption(4, 1)">
+                    <input type="radio" name="q4" value="b"> Subhas Chandra Bose
+                </label>
+                <label class="option" onclick="selectOption(4, 2)">
+                    <input type="radio" name="q4" value="c"> Sardar Patel
+                </label>
+                <label class="option" onclick="selectOption(4, 3)">
+                    <input type="radio" name="q4" value="d"> Mahatma Gandhi
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-5">
+            <h3>5. What is the staple food of Nepal?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(5, 0)">
+                    <input type="radio" name="q5" value="a"> Biryani
+                </label>
+                <label class="option" onclick="selectOption(5, 1)">
+                    <input type="radio" name="q5" value="b"> Dal Bhat
+                </label>
+                <label class="option" onclick="selectOption(5, 2)">
+                    <input type="radio" name="q5" value="c"> Sushi
+                </label>
+                <label class="option" onclick="selectOption(5, 3)">
+                    <input type="radio" name="q5" value="d"> Pasta
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-6">
+            <h3>6. What is the capital city of Maldives?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(6, 0)">
+                    <input type="radio" name="q6" value="a"> Colombo
+                </label>
+                <label class="option" onclick="selectOption(6, 1)">
+                    <input type="radio" name="q6" value="b"> Mumbai
+                </label>
+                <label class="option" onclick="selectOption(6, 2)">
+                    <input type="radio" name="q6" value="c"> Malé
+                </label>
+                <label class="option" onclick="selectOption(6, 3)">
+                    <input type="radio" name="q6" value="d"> Kathmandu
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-7">
+            <h3>7. Which is a major festival celebrated in Nepal?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(7, 0)">
+                    <input type="radio" name="q7" value="a"> Dashain
+                </label>
+                <label class="option" onclick="selectOption(7, 1)">
+                    <input type="radio" name="q7" value="b"> Christmas
+                </label>
+                <label class="option" onclick="selectOption(7, 2)">
+                    <input type="radio" name="q7" value="c"> Thanksgiving
+                </label>
+                <label class="option" onclick="selectOption(7, 3)">
+                    <input type="radio" name="q7" value="d"> Halloween
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-8">
+            <h3>8. In which ocean is the Maldives located?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(8, 0)">
+                    <input type="radio" name="q8" value="a"> Atlantic Ocean
+                </label>
+                <label class="option" onclick="selectOption(8, 1)">
+                    <input type="radio" name="q8" value="b"> Indian Ocean
+                </label>
+                <label class="option" onclick="selectOption(8, 2)">
+                    <input type="radio" name="q8" value="c"> Pacific Ocean
+                </label>
+                <label class="option" onclick="selectOption(8, 3)">
+                    <input type="radio" name="q8" value="d"> Arctic Ocean
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-9">
+            <h3>9. Who was born in Lumbini, Nepal?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(9, 0)">
+                    <input type="radio" name="q9" value="a"> Mahatma Gandhi
+                </label>
+                <label class="option" onclick="selectOption(9, 1)">
+                    <input type="radio" name="q9" value="b"> Mother Teresa
+                </label>
+                <label class="option" onclick="selectOption(9, 2)">
+                    <input type="radio" name="q9" value="c"> Gautama Buddha
+                </label>
+                <label class="option" onclick="selectOption(9, 3)">
+                    <input type="radio" name="q9" value="d"> Dalai Lama
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card question-10">
+            <h3>10. What are Nepalese dumplings called?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(10, 0)">
+                    <input type="radio" name="q10" value="a"> Momos
+                </label>
+                <label class="option" onclick="selectOption(10, 1)">
+                    <input type="radio" name="q10" value="b"> Samosa
+                </label>
+                <label class="option" onclick="selectOption(10, 2)">
+                    <input type="radio" name="q10" value="c"> Pakora
+                </label>
+                <label class="option" onclick="selectOption(10, 3)">
+                    <input type="radio" name="q10" value="d"> Spring Roll
+                </label>
+            </div>
+        </div>
+
+        <div class="submit-container">
+            <button class="btn" onclick="submitQuiz()">Submit Assessment</button>
+        </div>
+
+        <div id="result-box" class="result-box">
+            <h2>Assessment Results</h2>
+            <div class="score" id="score-display">0/10</div>
+            <p id="feedback"></p>
+            <button class="btn" onclick="window.location.href='feedback_contact_page.html'" style="margin-top: 1rem;">Continue to Feedback</button>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
+</footer>
+</html>

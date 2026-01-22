@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Asian Countries</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
+            color: #f0e6d2;
+            min-height: 100vh;
+        }
+        .navbar{
+            background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #d4af37;
+        }
+        .navbar ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .navbar a{
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        .navbar a:hover{
+            background: rgba(212, 175, 55, 0.2);
+        }
+        .hero{
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .hero h1{
+            font-size: 3.5rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero p{
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #e8d5b5;
+        }
+        .cta-buttons{
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .btn{
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+            color: #d4af37;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background: #d4af37;
+            color: #0d1b2a;
+            transform: scale(1.05);
+        }
+        .features{
+            background: rgba(13, 27, 42, 0.5);
+            padding: 3rem 2rem;
+            margin: 3rem auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            border: 1px solid #d4af37;
+        }
+        .features h2{
+            color: #d4af37;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .features ul{
+            list-style: none;
+            padding-left: 2rem;
+        }
+        .features li{
+            color: #e8d5b5;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .features li:before{
+            color: #d4af37;
+            position: absolute;
+            left: 0;
+        }
+        .word-scroller {
+            background: #d4af37;
+            color: #0d1b2a;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(26, 47, 79, 0.8);
+            border: 3px solid #d4af37;
+            border-radius: 15px;
+        }
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 180px 180px;
+            gap: 15px;
+        }
+        .collage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .collage img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .aboutus{
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(26, 47, 79, 0.8);
+            border: 3px solid #d4af37;
+            border-radius: 15px;
+        }
+        .aboutus p{
+            text-align: justify;
+            width:90vw;
+        }
+        footer{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="word-scroller">
+        <marquee behavior="scroll" direction="left">
+            <strong>Word of the Day:</strong> "Namaste" (India/Nepal) - A respectful greeting | "Assalaam Alaikum" (Maldives) - Peace be upon you
+        </marquee>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="main_page.html">Home</a></li>
+            <li><a href="login_page.html">Login</a></li>
+            <li><a href="createacc_page.html">Create Account</a></li>
+            <li><a href="feedback_contact_page.html">Feedback</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <h1>Explore South Asian Countries</h1>
+        <p>Discover the rich culture, heritage, and traditions of India, Maldives, and Nepal.</p>
+        <div class="image-container">
+            <div class="collage">
+            <img src="img1.jpeg" alt="Maldives Beach">
+            <img src="img2.jpeg" alt="Sunset at Sea">
+            <img src="img3.jpeg" alt="Festival Lamps">
+            <img src="img4.jpeg" alt="Traditional Dress">
+            <img src="img5.jpeg" alt="South Asian Cuisine">
+            <img src="img6.jpeg" alt="Cultural Dance">
+        </div>
+        </div>
+        <div class="features">
+            <h2>What You'll Learn</h2>
+            <ul>
+                <li>Cultural traditions and folklore of each country</li>
+                <li>Famous leaders and historical figures</li>
+                <li>Traditional cuisine and culinary heritage</li>
+                <li>Popular tourist destinations and landmarks</li>
+                <li>Interactive assessments to test your knowledge</li>
+            </ul>
+        </div>
+        <div class="cta-buttons">
+            <a href="login_page.html" class="btn">Login</a>
+            <a href="createacc_page.html" class="btn">Create Account</a>
+        </div>
+    </div>
+    <div class="aboutus">
+    <h2>About Us</h2>
+    <br>
+    <p>
+        This website was created by students for students, with the goal of making it easier to explore the cultures, histories, and everyday life of South Asian countries such as India, Nepal, and the Maldives.
+        Instead of reading from a textbook alone, learners can interact with images, videos, and short explanations that bring each country to life.
+    </p>
+    <p>
+        We believe that learning through interactive content and multimedia helps students stay engaged, remember more, and connect ideas to real places and people.
+        By combining maps, stories, food, festivals, and famous sites, this platform encourages curiosity and supports different learning styles.
+    </p>
+    <br>
+    <p>
+        Understanding other cultures builds respect, empathy, and a broader worldview, which are essential in a diverse and connected world.
+        Our hope is that this website not only supports your studies but also inspires you to appreciate the richness of South Asia and continue exploring beyond the classroom.
+    </p>
+    <br>
+    <p>
+        Thank you for visiting our site.
+        We wish you an enjoyable learning journey and hope these pages guide you towards new questions, discoveries, and dreams of travel in the future.
+    </p>
+    </div>
+</body>
+<footer>
+    <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
+</footer>
+</html>
