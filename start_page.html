@@ -117,12 +117,20 @@
             background: rgba(26, 47, 79, 0.8);
             border: 3px solid #d4af37;
             border-radius: 15px;
+            
         }
         footer{
             text-align: right;
         }
     </style>
 </head>
+<script>
+document.body.style.opacity = "0";
+window.addEventListener("load", function(){
+    document.body.style.transition = "opacity 0.8s";
+    document.body.style.opacity = "1";
+});
+</script>
 <body>
     <nav class="navbar">
         <ul>
@@ -140,11 +148,11 @@
         <div class="map-container">
             <h2>Interactive World Map</h2>
             <p>Click on the gold-shaded regions of South Asia to begin your journey.</p>
-            <img src="D:\VIT\Sem 4\Web programming\Mini Project\South_Asian_Countries\images\south_asian_map.jpeg" usemap="#southasianmap" alt="Gold World Map" width="750" height="567">        
+            <img src="D:\VIT\Sem 4\Web programming\Mini Project\South_Asian_Countries\images\south_asian_map.jpeg" usemap="#southasianmap" alt="Gold World Map" width="750" height="567">       
             <map name="southasianmap">
-                <area shape="poly" coords="483,283,494,266,512,278,523,289,502,322" href="india_page.html" alt="India">
-                <area shape="rect" coords="513,248,527,265" href="nepal_page.html" alt="Nepal">
-                <area shape="circle" coords="487,333,8" href="maldives_page.html" alt="Maldives">
+                <area shape="poly" coords="483,283,494,266,512,278,523,289,502,322" href="india_page.html" alt="India" title="Click to explore India">
+                <area shape="rect" coords="513,248,527,265" href="nepal_page.html" alt="Nepal" title="Click to explore Nepal">
+                <area shape="circle" coords="487,333,8" href="maldives_page.html" alt="Maldives" title="Click to explore Maldives">
             </map>
         </div>
         <div class="countries-preview">
@@ -162,11 +170,15 @@
             </div>
         </div>
         <div class="cta-buttons">
-            <a href="india_page.html" class="btn">India</a>
-            <a href="nepal_page.html" class="btn">Nepal</a>
-            <a href="maldives_page.html" class="btn">Maldives</a>
+            <a href="india_page.html" class="btn" id="indiaBtn">India</a>
+            <a href="nepal_page.html" class="btn" id="nepalBtn">Nepal</a>
+            <a href="maldives_page.html" class="btn" id="maldivesBtn">Maldives</a>
         </div>
     </div>
+    <script src="js/cookies.js"></script>
+    <script>
+        countVisit("startpage");
+    </script>
 </body>
 <footer>
     <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>

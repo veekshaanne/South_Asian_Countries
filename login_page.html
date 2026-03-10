@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Asian Countries</title>
+    <title>South Asian Countries - Login</title>
     <link rel="icon" href="favicon.ico" sizes="32x32">
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body{
+        body {
             font-family: 'Georgia', serif;
             background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
             color: #f0e6d2;
@@ -20,20 +19,20 @@
             display: flex;
             flex-direction: column;
         }
-        .navbar{
+        .navbar {
             background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
             padding: 1rem 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             border-bottom: 2px solid #d4af37;
         }
-        .navbar ul{
+        .navbar ul {
             list-style: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 2rem;
         }
-        .navbar a{
+        .navbar a {
             color: #d4af37;
             text-decoration: none;
             font-weight: bold;
@@ -42,18 +41,23 @@
             padding: 0.5rem 1rem;
             border-radius: 5px;
         }
-        .navbar a:hover{
+        .navbar a:hover {
             background: rgba(212, 175, 55, 0.2);
             transform: translateY(-2px);
         }
-        .login-container{
+        .navbar a.active {
+            background: rgba(212, 175, 55, 0.3);
+            border-bottom: 2px solid #f0e6d2;
+            color: #ffffff;
+        }
+        .login-container {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 2rem;
         }
-        .login-box{
+        .login-box {
             background: rgba(26, 47, 79, 0.8);
             padding: 3rem;
             border-radius: 15px;
@@ -62,24 +66,23 @@
             width: 100%;
             max-width: 450px;
         }
-        .login-box h2{
+        .login-box h2 {
             color: #d4af37;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-        .form-group{
-            margin-bottom: 1.5rem;
+        .form-group {
+            margin-bottom: 1.2rem;
         }
-        .form-group label{
+        .form-group label {
             display: block;
             color: #d4af37;
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             font-weight: bold;
         }
-        .form-group input{
+        .form-group input {
             width: 100%;
             padding: 1rem;
             border: 2px solid #d4af37;
@@ -87,9 +90,15 @@
             color: #f0e6d2;
             border-radius: 8px;
             font-size: 1rem;
-            transition: all 0.3s;
         }
-        .btn{
+        .error-text {
+            color: #ff4d4d;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none; 
+            font-family: Arial, sans-serif;
+        }
+        .btn {
             width: 100%;
             padding: 1rem;
             font-size: 1.2rem;
@@ -100,29 +109,25 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
-        .btn:hover{
+        .btn:hover {
             background: #d4af37;
             color: #0d1b2a;
         }
-        .link-text{
+        .link-text {
             text-align: center;
             margin-top: 1.5rem;
             color: #e8d5b5;
         }
-        .link-text a{
+        .link-text a {
             color: #d4af37;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s;
         }
-        .link-text a:hover{
-            color: #ffd700;
-            text-decoration: underline;
-        }
-        footer{
+        footer {
             text-align: right;
+            padding: 1rem;
         }
     </style>
 </head>
@@ -138,20 +143,77 @@
     <div class="login-container">
         <div class="login-box">
             <h2>Login</h2>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
-            <button class="btn" onclick="window.location.href='start_page.html'">Login</button>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <p class="error-text" id="emailError"></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <p class="error-text" id="passError"></p>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
             <p class="link-text">Don't have an account? <a href="createacc_page.html">Create Account</a></p>
         </div>
     </div>
+
+    <script>
+        function highlightNavLink() {
+            const currentPage = window.location.pathname.split("/").pop() || "main_page.html";
+            const navLinks = document.querySelectorAll('.navbar a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        const loginForm = document.getElementById('loginForm');
+        const emailError = document.getElementById('emailError');
+        const passError = document.getElementById('passError');
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const emailValue = document.getElementById('email').value;
+            const passwordValue = document.getElementById('password').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            emailError.style.display = "none";
+            passError.style.display = "none";
+            let hasError = false;
+            if (emailValue === "") {
+                emailError.innerText = "Email is required";
+                emailError.style.display = "block";
+                hasError = true;
+            } else if (!emailPattern.test(emailValue)) {
+                emailError.innerText = "Please enter a valid email format";
+                emailError.style.display = "block";
+                hasError = true;
+            }
+            if (passwordValue === "") {
+                passError.innerText = "Password is required";
+                passError.style.display = "block";
+                hasError = true;
+            }
+            if (!hasError) {
+                alert("Login successful!");
+                window.location.href = 'start_page.html';
+            }
+        });
+        window.onload = highlightNavLink;
+        document.body.style.opacity = "0";
+        window.onload = function() {
+        document.body.style.transition = "opacity 0.6s";
+        document.body.style.opacity = "1";
+        };
+    </script>
+    <script src="js/cookies.js"></script>
+    <script>
+        countVisit("loginpage");
+    </script>
+    <footer>
+        <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
+    </footer>
 </body>
-<footer>
-    <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
-</footer>
 </html>

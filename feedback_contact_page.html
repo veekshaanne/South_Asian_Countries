@@ -306,9 +306,141 @@
             <div class="form-group">
                 <textarea placeholder="Suggest new features, countries to cover, or improvements..." style="min-height: 100px;"></textarea>
             </div>
-            <button class="btn">Submit Suggestions</button>
+            <button class="btn" onclick="submitSuggestion()">Submit Suggestions</button>
+
+<div id="suggestion-success" class="success-message">
+Thank you for your suggestion! We will consider it for future updates.
+</div>
         </div>
     </div>
+    <script>
+
+let rating = 0;
+
+function setRating(value){
+
+rating = value;
+
+let stars = document.querySelectorAll(".star");
+
+stars.forEach(function(star,index){
+
+if(index < value){
+star.classList.add("active");
+}else{
+star.classList.remove("active");
+}
+
+});
+
+}
+
+function submitFeedback(){
+
+let name = document.getElementById("feedback-name").value.trim();
+let email = document.getElementById("feedback-email").value.trim();
+let phone = document.getElementById("feedback-phone").value.trim();
+let comments = document.getElementById("feedback-comments").value.trim();
+
+let nameRegex = /^[A-Za-z\s]+$/;
+let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let phoneRegex = /^[0-9]{10}$/;
+
+if(rating === 0){
+alert("Please select a star rating.");
+return;
+}
+
+if(name === ""){
+alert("Name is required.");
+return;
+}
+
+if(!nameRegex.test(name)){
+alert("Name cannot contain numbers.");
+return;
+}
+
+if(email === ""){
+alert("Email is required.");
+return;
+}
+
+if(!emailRegex.test(email)){
+alert("Enter a valid email.");
+return;
+}
+
+if(phone !== "" && !phoneRegex.test(phone)){
+alert("Phone number must be 10 digits.");
+return;
+}
+
+if(comments === ""){
+alert("Please enter your feedback.");
+return;
+}
+
+document.getElementById("feedback-success").style.display="block";
+
+}
+
+function submitContact(){
+
+let name = document.getElementById("contact-name").value.trim();
+let email = document.getElementById("contact-email").value.trim();
+let phone = document.getElementById("contact-phone").value.trim();
+let message = document.getElementById("contact-message").value.trim();
+
+let nameRegex = /^[A-Za-z\s]+$/;
+let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let phoneRegex = /^[0-9]{10}$/;
+
+if(name === ""){
+alert("Name is required.");
+return;
+}
+
+if(!nameRegex.test(name)){
+alert("Name cannot contain numbers.");
+return;
+}
+
+if(email === ""){
+alert("Email is required.");
+return;
+}
+
+if(!emailRegex.test(email)){
+alert("Enter a valid email.");
+return;
+}
+
+if(phone !== "" && !phoneRegex.test(phone)){
+alert("Phone number must be 10 digits.");
+return;
+}
+
+if(message === ""){
+alert("Please enter your message.");
+return;
+}
+
+document.getElementById("contact-success").style.display="block";
+
+}
+function submitSuggestion(){
+
+let suggestion = document.querySelector(".section textarea").value.trim();
+document.getElementById("suggestion-success").style.display = "block";
+
+}
+
+</script>
+<script src="js/cookies.js"></script>
+    <script>
+        countVisit("feedbackpage");
+    </script>
 </body>
 <footer>
     <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>

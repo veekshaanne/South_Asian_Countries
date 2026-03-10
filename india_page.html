@@ -11,21 +11,18 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Georgia', serif;
             background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
             color: #f0e6d2;
             min-height: 100vh;
         }
-
         .navbar {
             background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
             padding: 1rem 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             border-bottom: 2px solid #d4af37;
         }
-
         .navbar ul {
             list-style: none;
             display: flex;
@@ -33,7 +30,6 @@
             flex-wrap: wrap;
             gap: 1.5rem;
         }
-
         .navbar a {
             color: #d4af37;
             text-decoration: none;
@@ -43,18 +39,15 @@
             padding: 0.5rem 1rem;
             border-radius: 5px;
         }
-
         .navbar a:hover {
             background: rgba(212, 175, 55, 0.2);
             transform: translateY(-2px);
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
-
         .header {
             text-align: center;
             margin-bottom: 3rem;
@@ -63,19 +56,16 @@
             border-radius: 15px;
             border: 2px solid #d4af37;
         }
-
         .header h1 {
             color: #d4af37;
             font-size: 3rem;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-
         .header p {
             color: #e8d5b5;
             font-size: 1.2rem;
         }
-
        .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -99,7 +89,6 @@
             line-height: 1.8;
             margin-bottom: 2rem;
         }
-
         .section-title {
             color: #d4af37;
             font-size: 2rem;
@@ -108,14 +97,12 @@
             border-bottom: 2px solid #d4af37;
             padding-bottom: 0.5rem;
         }
-
         .accordion-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
             margin-top: 1rem;
         }
-
         details.accordion-card {
             background: rgba(13, 27, 42, 0.7);
             border-radius: 10px;
@@ -123,7 +110,6 @@
             padding: 1rem 1.2rem;
             cursor: pointer;
         }
-
         details.accordion-card summary {
             list-style: none;
             cursor: pointer;
@@ -131,35 +117,29 @@
             font-weight: bold;
             font-size: 1.05rem;
         }
-
         details.accordion-card summary::-webkit-details-marker {
             display: none;
         }
-
         details.accordion-card summary::after {
             content: "＋";
             float: right;
             font-weight: bold;
         }
-
         details.accordion-card[open] summary::after {
             content: "−";
         }
-
         .accordion-content {
             margin-top: 0.8rem;
             color: #e8d5b5;
             font-size: 0.98rem;
             line-height: 1.6;
         }
-
         .media-container {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
             margin-top: 1rem;
         }
-
         .media-embed {
             flex: 1;
             min-width: 250px;
@@ -169,18 +149,15 @@
             border-radius: 10px;
             overflow: hidden;
         }
-
         .media-embed iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
-
         .btn-container {
             text-align: center;
             margin-top: 2.5rem;
         }
-
         .btn {
             display: inline-block;
             padding: 1rem 2rem;
@@ -195,7 +172,6 @@
             cursor: pointer;
             margin: 0.4rem;
         }
-
         .btn:hover {
             background: #d4af37;
             color: #0d1b2a;
@@ -207,103 +183,198 @@
     </style>
 </head>
 <body>
-<nav class="navbar">
-    <ul>
-        <li><a href="main_page.html">Home</a></li>
-        <li><a href="start_page.html">Explore</a></li>
-        <li><a href="india_page.html">India</a></li>
-        <li><a href="nepal_page.html">Nepal</a></li>
-        <li><a href="maldives_page.html">Maldives</a></li>
-        <li><a href="assessment_page.html">Assessment</a></li>
-        <li><a href="feedback_contact_page.html">Feedback</a></li>
-    </ul>
-</nav>
-
-<div class="container">
-    <div class="header">
-        <h1>🇮🇳 India</h1>
-        <p>The Land of Diversity and Heritage</p>
-    </div>
-
-    <div class="image-gallery">
-    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" alt="Taj Mahal">
-    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5" alt="Indian Festival">
-    <img src="https://images.unsplash.com/photo-1602643163983-ed0babc39797" alt="Indian Cuisine">
-    <img src="https://images.unsplash.com/photo-1548013146-72479768bada" alt="Varanasi Ghats">
-</div>
-
-
-    <p class="country-intro">
-        India is a vast South Asian republic stretching from the Himalayas to the Indian Ocean, home to a highly diverse population, many languages, and multiple religions.
-        Its capital is New Delhi, and the country is known for deep historical traditions combined with rapid modern development.
-    </p>
-
-    <h2 class="section-title">Explore India</h2>
-
-    <div class="accordion-grid">
-        <details class="accordion-card">
-            <summary>Culture & Traditions</summary>
-            <div class="accordion-content">
-                <p>Indian culture emphasizes family, community, and religious life, with Hinduism, Islam, Christianity, Sikhism, Buddhism, and Jainism all shaping social customs and festivals.</p>
-                <p>Festivals such as Diwali, Holi, Eid, Christmas, and regional harvest celebrations are marked by rituals, decorations, and communal meals across the country.</p>
-            </div>
-        </details>
-
-        <details class="accordion-card">
-            <summary>Cuisine</summary>
-            <div class="accordion-content">
-                <p>Indian cuisine is famous for its use of spices and regional diversity, broadly grouped into northern, southern, eastern, western, and northeastern styles of cooking.</p>
-                <p>Popular dishes include biryani, butter chicken, masala dosa, samosas, tandoori items, and sweets such as gulab jamun and jalebi, with rice more common in the south and wheat in much of the north.</p>
-            </div>
-        </details>
-
-        <details class="accordion-card">
-            <summary>Tourist Spots</summary>
-            <div class="accordion-content">
-                <p>Key attractions include the Taj Mahal in Agra, Rajasthan’s forts and palaces, the Kerala backwaters, and ancient sites such as Ajanta and Ellora caves and Hampi.</p>
-                <p>Spiritual destinations like Varanasi and major fairs and festivals draw visitors interested in religion, history, and traditional arts.</p>
-            </div>
-        </details>
-
-        <details class="accordion-card">
-            <summary>Leaders (Past–Present)</summary>
-            <div class="accordion-content">
-                <p>Mahatma Gandhi led a non‑violent struggle against colonial rule, while Jawaharlal Nehru became the first prime minister and influenced India’s early political and economic direction.</p>
-                <p>India functions as a parliamentary democracy with an elected prime minister and a ceremonial president, supported by a multi‑party system and a federal structure of states and union territories.</p>
-            </div>
-        </details>
-
-        <details class="accordion-card">
-            <summary>Folklore & Epics</summary>
-            <div class="accordion-content">
-                <p>Indian folklore includes epics such as the Ramayana and Mahabharata and fable collections like the Panchatantra, which teach moral lessons through animal stories and legendary heroes.</p>
-                <p>Regional tales of figures such as Tenali Rama and Birbal also reflect local humor, wisdom, and social values passed down through oral storytelling.</p>
-            </div>
-        </details>
-
-        <details class="accordion-card">
-            <summary>Quick Facts</summary>
-            <div class="accordion-content">
-                <p>India is one of the world’s most populous countries and a large democracy, divided into 28 states and 8 union territories with New Delhi as the capital.</p>
-                <p>The country has major contributions to mathematics, philosophy, literature, and performing arts and is a growing global economic power.</p>
-            </div>
-        </details>
-    </div>
-
-    <h2 class="section-title">Multimedia</h2>
-    <div class="media-container">
+    <nav class="navbar">
+        <ul>
+            <li><a href="main_page.html">Home</a></li>
+            <li><a href="start_page.html">Explore</a></li>
+            <li><a href="india_page.html">India</a></li>
+            <li><a href="nepal_page.html">Nepal</a></li>
+            <li><a href="maldives_page.html">Maldives</a></li>
+            <li><a href="assessment_page.html">Assessment</a></li>
+            <li><a href="feedback_contact_page.html">Feedback</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <h1>🇮🇳 India</h1>
+            <p>The Land of Diversity and Heritage</p>
+        </div>
+        <div class="image-gallery">
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" alt="Taj Mahal">
+            <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5" alt="Indian Festival">
+            <img src="https://images.unsplash.com/photo-1602643163983-ed0babc39797" alt="Indian Cuisine">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada" alt="Varanasi Ghats">
+        </div>
+        <p class="country-intro">
+            India is a vast South Asian republic stretching from the Himalayas to the Indian Ocean, home to a highly diverse population, many languages, and multiple religions.
+            Its capital is New Delhi, and the country is known for deep historical traditions combined with rapid modern development.
+        </p>
+        <h2 class="section-title">Explore India</h2>
+        <div class="accordion-grid">
+            <details class="accordion-card">
+                <summary>Culture & Traditions</summary>
+                <div class="accordion-content">
+                    <p>Indian culture emphasizes family, community, and religious life, with Hinduism, Islam, Christianity, Sikhism, Buddhism, and Jainism all shaping social customs and festivals.</p>
+                    <p>Festivals such as Diwali, Holi, Eid, Christmas, and regional harvest celebrations are marked by rituals, decorations, and communal meals across the country.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Cuisine</summary>
+                <div class="accordion-content">
+                    <p>Indian cuisine is famous for its use of spices and regional diversity, broadly grouped into northern, southern, eastern, western, and northeastern styles of cooking.</p>
+                    <p>Popular dishes include biryani, butter chicken, masala dosa, samosas, tandoori items, and sweets such as gulab jamun and jalebi, with rice more common in the south and wheat in much of the north.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Tourist Spots</summary>
+                <div class="accordion-content">
+                    <p>Key attractions include the Taj Mahal in Agra, Rajasthan’s forts and palaces, the Kerala backwaters, and ancient sites such as Ajanta and Ellora caves and Hampi.</p>
+                    <p>Spiritual destinations like Varanasi and major fairs and festivals draw visitors interested in religion, history, and traditional arts.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Leaders (Past–Present)</summary>
+                <div class="accordion-content">
+                    <p>Mahatma Gandhi led a non‑violent struggle against colonial rule, while Jawaharlal Nehru became the first prime minister and influenced India’s early political and economic direction.</p>
+                    <p>India functions as a parliamentary democracy with an elected prime minister and a ceremonial president, supported by a multi‑party system and a federal structure of states and union territories.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Folklore & Epics</summary>
+                <div class="accordion-content">
+                    <p>Indian folklore includes epics such as the Ramayana and Mahabharata and fable collections like the Panchatantra, which teach moral lessons through animal stories and legendary heroes.</p>
+                    <p>Regional tales of figures such as Tenali Rama and Birbal also reflect local humor, wisdom, and social values passed down through oral storytelling.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Quick Facts</summary>
+                <div class="accordion-content">
+                    <p>India is one of the world’s most populous countries and a large democracy, divided into 28 states and 8 union territories with New Delhi as the capital.</p>
+                    <p>The country has major contributions to mathematics, philosophy, literature, and performing arts and is a growing global economic power.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Geography & Climate</summary>
+                <div class="accordion-content">
+                    <p>India spans a vast geographical area ranging from the Himalayan mountain ranges in the north to the tropical coastal regions along the Indian Ocean in the south.</p>
+                    <p>The country includes deserts like the Thar Desert in Rajasthan, fertile plains formed by rivers such as the Ganges and Brahmaputra, dense forests, and long coastlines.</p>
+                    <p>India experiences three primary seasons: summer, the monsoon rainy season, and winter. The monsoon plays a crucial role in agriculture and water supply across the country.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Languages & Diversity</summary>
+                <div class="accordion-content">
+                    <p>India is one of the most linguistically diverse countries in the world. The Indian constitution recognizes 22 official languages and hundreds of regional dialects.</p>
+                    <p>Hindi and English are widely used for national communication, while languages such as Tamil, Telugu, Bengali, Marathi, Kannada, and Punjabi dominate regional culture.</p>
+                    <p>This linguistic diversity reflects India’s multicultural society shaped by centuries of migration, trade, and regional traditions.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Economy & Modern India</summary>
+                <div class="accordion-content">
+                    <p>India has one of the fastest-growing major economies in the world. Key industries include agriculture, manufacturing, technology, pharmaceuticals, and film production.</p>
+                    <p>Cities like Bangalore, Hyderabad, and Mumbai are global centers for technology, finance, and innovation.</p>
+                    <p>The country also has a rapidly expanding startup ecosystem and is becoming a major hub for digital services and software development.</p>
+                </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Wildlife & Nature</summary>
+                    <div class="accordion-content">
+                        <p>India is home to rich biodiversity with more than 100 national parks and wildlife sanctuaries protecting unique ecosystems.</p>
+                        <p>Famous animals include the Bengal tiger, Indian elephant, Asiatic lion, and the peacock, which is the national bird of India.</p>
+                        <p>Popular wildlife destinations include Jim Corbett National Park, Ranthambore National Park, and Kaziranga National Park.</p>
+                    </div>
+            </details>
+            <details class="accordion-card">
+                <summary>Famous Monuments</summary>
+                    <div class="accordion-content">
+                        <p>India has many historic monuments reflecting centuries of architectural traditions.</p>
+                        <p>The Taj Mahal in Agra is considered one of the most beautiful buildings in the world and symbolizes love.</p>
+                        <p>Other famous landmarks include the Red Fort in Delhi, the Qutub Minar, the Gateway of India in Mumbai, and the Golden Temple in Amritsar.</p>
+                    </div>
+            </details>
+        </div>
+        <h2 class="section-title">Multimedia</h2>
+        <div class="media-container">
         <div class="media-embed">
-            <iframe src="https://youtu.be/lK3oqU2WNY0?si=DvOWip4Yc6INlXDA" title="India travel video" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/lK3oqU2WNY0"
+        title="India travel video"
+        allowfullscreen></iframe>
         </div>
         <div class="media-embed">
-            <iframe src="https://youtu.be/xUphsn5b1w8?si=MDg2liIDTSAb333o" title="Indian classical dance" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/xUphsn5b1w8"
+        title="Indian classical dance"
+        allowfullscreen></iframe>
         </div>
-    </div>
-
-    <div class="btn-container">
-        <a href="nepal_page.html" class="btn">Next: Nepal →</a>
-    </div>
-</div>
+        </div>
+        <div class="btn-container">
+        <button class="btn" id="factBtn">Show Random India Fact</button>
+        <button class="btn" id="musicBtn">Play Music</button>
+        <p id="factDisplay" style="margin-top:15px;color:#e8d5b5;"></p>
+        </div>
+            <div class="btn-container">
+                <a href="nepal_page.html" class="btn">Next: Nepal →</a>
+            </div>
+        </div>
+<script>
+    const facts = [
+    "Chess originated in India.",
+    "The concept of the number zero was developed by Indian mathematicians.",
+    "India is the world's largest democracy.",
+    "The Kumbh Mela gathering is visible from space.",
+    "Yoga originated in ancient India over 5,000 years ago.",
+    "India has the second largest population in the world."
+    ];
+    document.getElementById("factBtn").onclick = function(){
+    let randomIndex = Math.floor(Math.random() * facts.length);
+    document.getElementById("factDisplay").innerText = facts[randomIndex];
+    };
+    let accordions = document.querySelectorAll(".accordion-card");
+    accordions.forEach(function(item){
+    item.addEventListener("toggle", function(){
+    if(item.open){
+    accordions.forEach(function(other){
+    if(other !== item){
+    other.open = false;
+    }
+    });
+    }
+    });
+    });
+    let sections = document.querySelectorAll(".accordion-card");
+    window.addEventListener("scroll", function(){
+    sections.forEach(function(section){
+    let position = section.getBoundingClientRect().top;
+    let screenPosition = window.innerHeight * 0.85;
+    if(position < screenPosition){
+    section.style.opacity = "1";
+    section.style.transform = "translateY(0)";
+    }
+    });
+    });
+    sections.forEach(function(section){
+    section.style.opacity = "0";
+    section.style.transform = "translateY(30px)";
+    section.style.transition = "all 0.6s";
+    });
+    let music = new Audio("music/Jalandhar.mp3");
+    let playing = false;
+    document.getElementById("musicBtn").onclick = function(){
+    if(!playing){
+    music.play();
+    this.innerText = "Pause Music";
+    playing = true;
+    }else{
+    music.pause();
+    this.innerText = "Play Music";
+    playing = false;
+    }
+    };
+</script>
+<script src="js/cookies.js"></script>
+    <script>
+        countVisit("indiapage");
+    </script>
 </body>
 <footer>
     <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>

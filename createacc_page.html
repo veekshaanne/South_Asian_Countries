@@ -1,154 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Asian Countries</title>
-    <link rel="icon" href="favicon.ico" sizes="32x32">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Asian Countries</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
     <style>
         *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
         }
-
         body{
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #0a1628 0%, #1a2f4f 100%);
-            color: #f0e6d2;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        font-family:'Georgia',serif;
+        background:linear-gradient(135deg,#0a1628 0%,#1a2f4f 100%);
+        color:#f0e6d2;
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
         }
         .navbar{
-            background: linear-gradient(90deg, #0d1b2a 0%, #1b263b 100%);
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            border-bottom: 2px solid #d4af37;
+        background:linear-gradient(90deg,#0d1b2a 0%,#1b263b 100%);
+        padding:1rem 2rem;
+        box-shadow:0 4px 6px rgba(0,0,0,0.3);
+        border-bottom:2px solid #d4af37;
         }
         .navbar ul{
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
+        list-style:none;
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:2rem;
         }
         .navbar a{
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+        color:#d4af37;
+        text-decoration:none;
+        font-weight:bold;
+        font-size:1.1rem;
+        transition:all 0.3s;
+        padding:0.5rem 1rem;
+        border-radius:5px;
         }
         .navbar a:hover{
-            background: rgba(212, 175, 55, 0.2);
+        background:rgba(212,175,55,0.2);
         }
         .signup-container{
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
+        flex:1;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:2rem;
         }
         .signup-box{
-            background: rgba(26, 47, 79, 0.8);
-            padding: 3rem;
-            border-radius: 15px;
-            border: 2px solid #d4af37;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            max-width: 500px;
+        background:rgba(26,47,79,0.8);
+        padding:3rem;
+        border-radius:15px;
+        border:2px solid #d4af37;
+        box-shadow:0 10px 30px rgba(0,0,0,0.5);
+        width:100%;
+        max-width:500px;
         }
         .signup-box h2{
-            color: #d4af37;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        color:#d4af37;
+        font-size:2.5rem;
+        text-align:center;
+        margin-bottom:2rem;
         }
         .form-group{
-            margin-bottom: 1.5rem;
+        margin-bottom:1.5rem;
         }
         .form-group label{
-            display: block;
-            color: #d4af37;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+        display:block;
+        color:#d4af37;
+        font-size:1.1rem;
+        margin-bottom:0.5rem;
+        font-weight:bold;
         }
         .form-group input{
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #d4af37;
-            background: rgba(13, 27, 42, 0.6);
-            color: #f0e6d2;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s;
+        width:100%;
+        padding:1rem;
+        border:2px solid #d4af37;
+        background:rgba(13,27,42,0.6);
+        color:#f0e6d2;
+        border-radius:8px;
+        font-size:1rem;
         }
         .form-group input:focus{
-            outline: none;
-            border-color: #ffd700;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        outline:none;
+        border-color:#ffd700;
         }
         .btn{
-            width: 100%;
-            padding: 1rem;
-            font-size: 1.2rem;
-            border: 2px solid #d4af37;
-            background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
-            color: #d4af37;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 1rem;
+        width:100%;
+        padding:1rem;
+        font-size:1.2rem;
+        border:2px solid #d4af37;
+        background:linear-gradient(135deg,#1b263b 0%,#0d1b2a 100%);
+        color:#d4af37;
+        border-radius:8px;
+        font-weight:bold;
+        cursor:pointer;
+        margin-top:1rem;
         }
         .btn:hover{
-            background: #d4af37;
-            color: #0d1b2a;
+        background:#d4af37;
+        color:#0d1b2a;
         }
         .link-text{
-            text-align: center;
-            margin-top: 1.5rem;
-            color: #e8d5b5;
+        text-align:center;
+        margin-top:1.5rem;
+        color:#e8d5b5;
         }
         .link-text a{
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
+        color:#d4af37;
+        text-decoration:none;
+        font-weight:bold;
         }
-        .link-text a:hover{
-            color: #ffd700;
-            text-decoration: underline;
+        .error{
+        color:red;
+        font-size:0.9rem;
+        margin-top:4px;
+        }
+        .age-display{
+        color:#ffd700;
+        font-size:0.9rem;
+        margin-top:5px;
         }
         footer{
-            text-align: right;
+        text-align:right;
         }
-        select, textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #d4af37;
-            background: rgba(13, 27, 42, 0.6);
-            color: #f0e6d2;
-            border-radius: 8px;
-            font-size: 1rem;
+        select, textarea{
+        width:100%;
+        padding:1rem;
+        border:2px solid #d4af37;
+        background:rgba(13,27,42,0.6);
+        color:#f0e6d2;
+        border-radius:8px;
+        font-size:1rem;
         }
-        select option {
-            background: #1b263b;
-            color: #f0e6d2;
-        }
-        .option-group {
-            display: flex;
-            gap: 1.5rem;
-            color: #e8d5b5;
-            font-size: 1rem;
-        }
-        .option-group input {
-            margin-right: 0.4rem;
+        select option{
+        background:#1b263b;
+        color:#f0e6d2;
         }
     </style>
 </head>
@@ -163,58 +154,147 @@
     </nav>
     <div class="signup-container">
         <div class="signup-box">
-    <h2>Create Account</h2>
-    <div class="form-group">
-        <label for="name">Full Name*</label>
-        <input type="text" id="name" placeholder="Enter your full name" required>
+            <h2>Create Account</h2>
+        <div class="form-group">
+            <label for="name">Full Name*</label>
+            <input type="text" id="name">
+        <div class="error" id="nameError"></div>
     </div>
     <div class="form-group">
         <label for="email">Email*</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
+        <input type="text" id="email">
+        <div class="error" id="emailError"></div>
     </div>
     <div class="form-group">
         <label for="phone">Phone Number*</label>
-        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+        <input type="text" id="phone">
+        <div class="error" id="phoneError"></div>
     </div>
     <div class="form-group">
-        <label for="dob">Date of Birth</label>
+        <label for="dob">Date of Birth*</label>
         <input type="date" id="dob">
+        <div class="age-display" id="ageDisplay"></div>
+        <div class="error" id="dobError"></div>
     </div>
     <div class="form-group">
-        <label for="country">Country of Interest</label>
+        <label for="country">Country of Interest*</label>
         <select id="country">
             <option value="">-- Select a Country --</option>
             <option>India</option>
             <option>Maldives</option>
             <option>Nepal</option>
         </select>
+        <div class="error" id="countryError"></div>
     </div>
     <div class="form-group">
-        <label for="bio">About You</label>
-        <textarea id="bio" rows="3" placeholder="Tell us why you want to learn about South Asia"></textarea>
+        <label for="bio">About You*</label>
+        <textarea id="bio" rows="3"></textarea>
+        <div class="error" id="bioError"></div>
     </div>
     <div class="form-group">
-        <label for="profile">Upload Profile Picture</label>
+        <label for="profile">Upload Profile Picture*</label>
         <input type="file" id="profile">
+        <div class="error" id="profileError"></div>
     </div>
     <div class="form-group">
         <label for="password">Password*</label>
-        <input type="password" id="password" placeholder="Create a password" required>
+        <input type="password" id="password">
+        <div class="error" id="passwordError"></div>
     </div>
     <div class="form-group">
         <label for="confirm-password">Confirm Password*</label>
-        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+        <input type="password" id="confirm-password">
+        <div class="error" id="confirmError"></div>
     </div>
-    <button class="btn" onclick="window.location.href='course-india.html'">
-        Create Account
-    </button>
+    <button class="btn" id="createBtn">Create Account</button>
     <p class="link-text">
         Already have an account? <a href="login_page.html">Login</a>
     </p>
-</div>
     </div>
-</body>
-<footer>
+    </div>
+    <footer>
     <p>Copyright © 2026 South Asian Countries. All rights reserved.</p>
-</footer>
+    </footer>
+    <script>
+        document.body.style.opacity = "0";
+        window.addEventListener("load", function(){
+            document.body.style.transition = "opacity 0.8s";
+            document.body.style.opacity = "1";
+        });
+        let storedAge = null;
+        document.getElementById("dob").addEventListener("change", function(){
+        let dob = new Date(this.value);
+        let today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        let m = today.getMonth() - dob.getMonth();
+        if(m < 0 || (m === 0 && today.getDate() < dob.getDate())){
+        age--;
+        }
+        storedAge = age;
+        document.getElementById("ageDisplay").innerText = "Age: " + age;
+        });
+        document.getElementById("createBtn").addEventListener("click", function(){
+        let valid = true;
+        function setError(id,message){
+        document.getElementById(id).innerText = message;
+        valid = false;
+        }
+        function clearErrors(){
+        document.querySelectorAll(".error").forEach(e => e.innerText = "");
+        }
+        clearErrors();
+        let name=document.getElementById("name").value.trim();
+        let email=document.getElementById("email").value.trim();
+        let phone=document.getElementById("phone").value.trim();
+        let dob=document.getElementById("dob").value;
+        let country=document.getElementById("country").value;
+        let bio=document.getElementById("bio").value.trim();
+        let profile=document.getElementById("profile").value;
+        let password=document.getElementById("password").value;
+        let confirm=document.getElementById("confirm-password").value;
+        let nameRegex=/^[A-Za-z\s]+$/;
+        let emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let phoneRegex=/^[0-9]{10}$/;
+        if(name==="") setError("nameError","Name is required");
+        else if(!nameRegex.test(name)) setError("nameError","Name cannot contain numbers");
+        if(email==="") setError("emailError","Email is required");
+        else if(!emailRegex.test(email)) setError("emailError","Enter a valid email");
+        if(phone==="") setError("phoneError","Phone number required");
+        else if(!phoneRegex.test(phone)) setError("phoneError","Phone must contain 10 digits only");
+        if(dob===""){
+            setError("dobError","Date of birth required");
+        }
+        else if(storedAge === null){
+            setError("dobError","Please select DOB to calculate age");
+        }
+        else if(storedAge <= 0){
+            setError("dobError","Invalid date of birth");
+        }
+        else if(storedAge < 10){
+            setError("dobError","You must be at least 10 years old");
+        }
+        else if(storedAge > 100){
+            setError("dobError","Please enter a valid age");
+        }
+        if(country==="") setError("countryError","Please select a country");
+        if(bio==="") setError("bioError","Please enter something about yourself");
+        if(profile==="") setError("profileError","Please upload a profile picture");
+        if(password==="") setError("passwordError","Password required");
+        if(confirm==="") setError("confirmError","Confirm your password");
+        if(password!==confirm) setError("confirmError","Passwords do not match");
+        if(valid){
+        alert("Account created successfully!");
+        document.body.style.opacity = "0";
+        document.body.style.transition = "opacity 0.8s";
+        setTimeout(function(){
+        window.location.href="start_page.html";
+        },800);
+        }
+        });
+    </script>
+    <script src="js/cookies.js"></script>
+    <script>
+        countVisit("createaccpage");
+    </script>
+</body>
 </html>
