@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/South_Asian_Countries/react_part/static/css/main.9321f336.css",
-    "main.js": "/South_Asian_Countries/react_part/static/js/main.8055906e.js",
-    "index.html": "/South_Asian_Countries/react_part/index.html",
-    "main.9321f336.css.map": "/South_Asian_Countries/react_part/static/css/main.9321f336.css.map",
-    "main.8055906e.js.map": "/South_Asian_Countries/react_part/static/js/main.8055906e.js.map"
+    "main.css": "/South_Asian_Countries/static/css/main.9321f336.css",
+    "main.js": "/South_Asian_Countries/static/js/main.8055906e.js",
+    "index.html": "/South_Asian_Countries/index.html",
+    "main.9321f336.css.map": "/South_Asian_Countries/static/css/main.9321f336.css.map",
+    "main.8055906e.js.map": "/South_Asian_Countries/static/js/main.8055906e.js.map"
   },
   "entrypoints": [
     "static/css/main.9321f336.css",
