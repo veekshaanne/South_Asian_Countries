@@ -1,7 +1,7 @@
 {
   "name": "my-appr",
   "version": "0.1.0",
-  "homepage": "https://veekshaanne.github.io/South_Asian_Countries/react_part",
+  "homepage": "https://veekshaanne.github.io/South_Asian_Countries",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
